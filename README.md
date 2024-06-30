@@ -1,7 +1,7 @@
 # Northwind Database OLTP to OLAP Transformation: Leveraging Dimensional Modeling for Advanced Analytics
 
 ## Table of Contents
-- [Identifying Business Requirements](#Identifying Business Requirements)
+- [Identifying Business Requirements](#Identifying-Business-Requirements)
 - [Database Schema](#database-schema)
 - [Tech Stack & Tools](#TechStack&Tools)
 
@@ -9,6 +9,8 @@
 
 To modernize the data reporting solution for Northwind through Dimensional Modeling.
 Identifying Business Requirements
+
+# Identifying Business Requirements
 
 There are many business processes that can be derived from the Northwind database through the E-R diagram. However, we will be focusing on one process:
 
