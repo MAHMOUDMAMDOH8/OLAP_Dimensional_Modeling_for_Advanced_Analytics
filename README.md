@@ -84,9 +84,13 @@ transform_data.py:
 # Tech Stack & Tools
 
 Infrastructure: Docker
+
 Data Warehouse: PostgreSQL
+
 Database: PostgreSQL
+
 Orchestration: Apache Airflow
+
 ETL Scripts: Jupyter & Python
 
 
