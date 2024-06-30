@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Identifying Business Requirements](#Identifying-Business-Requirements)
 - [Database Schema](#database-schema)
-- [Tech Stack & Tools](#TechStack&Tools)
+- [Tech Stack & Tools](#Tech-Stack-&-Tools)
 
 # Aim
 
