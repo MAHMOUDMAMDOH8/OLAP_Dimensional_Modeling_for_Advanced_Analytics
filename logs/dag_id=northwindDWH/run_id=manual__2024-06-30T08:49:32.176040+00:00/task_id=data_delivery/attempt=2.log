@@ -1,0 +1,64 @@
+[2024-06-30T08:52:01.954+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-30T08:52:01.983+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T08:49:32.176040+00:00 [queued]>
+[2024-06-30T08:52:01.993+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T08:49:32.176040+00:00 [queued]>
+[2024-06-30T08:52:01.993+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-06-30T08:52:02.005+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_delivery> on 2024-06-30 08:49:32.176040+00:00
+[2024-06-30T08:52:02.014+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=153) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-30T08:52:02.015+0000] {standard_task_runner.py:63} INFO - Started process 155 to run task
+[2024-06-30T08:52:02.016+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'data_delivery', 'manual__2024-06-30T08:49:32.176040+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmp6s_0s27j']
+[2024-06-30T08:52:02.018+0000] {standard_task_runner.py:91} INFO - Job 94: Subtask data_delivery
+[2024-06-30T08:52:02.033+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-30T08:52:02.070+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.data_delivery manual__2024-06-30T08:49:32.176040+00:00 [running]> on host 3abb3aef8f21
+[2024-06-30T08:52:02.151+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='data_delivery' AIRFLOW_CTX_EXECUTION_DATE='2024-06-30T08:49:32.176040+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-30T08:49:32.176040+00:00'
+[2024-06-30T08:52:02.152+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-30T08:52:02.164+0000] {northwindDWH.py:49} INFO - Data delivery started
+[2024-06-30T08:52:02.164+0000] {Load_data.py:85} INFO - loading dimEmployee to db ...
+[2024-06-30T08:52:02.164+0000] {Transform_data.py:51} INFO - start Extracting dim employee
+[2024-06-30T08:52:02.167+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.170+0000] {Transform_data.py:60} INFO - Extract dim employees done
+[2024-06-30T08:52:02.171+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.175+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.177+0000] {Load_data.py:103} INFO - SCD type 2 on dimemployee started
+[2024-06-30T08:52:02.183+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.183+0000] {Load_data.py:159} INFO - Loading dimproduct to db...
+[2024-06-30T08:52:02.184+0000] {Transform_data.py:27} INFO - Start Extracting dim product
+[2024-06-30T08:52:02.186+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.189+0000] {Transform_data.py:41} INFO - Extract dim products done
+[2024-06-30T08:52:02.189+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.192+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.196+0000] {Load_data.py:172} INFO - SCD type 1 on dimproduct started
+[2024-06-30T08:52:02.214+0000] {Tables_creations.py:27} INFO - Loading data into table dim_products...
+[2024-06-30T08:52:02.218+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.229+0000] {Tables_creations.py:41} INFO - Data loaded successfully into table dim_products With 45 Row
+[2024-06-30T08:52:02.230+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.230+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.230+0000] {Load_data.py:215} INFO - Loading dim_products completed successfully
+[2024-06-30T08:52:02.231+0000] {Load_data.py:12} INFO - loading dimCustomers to db ...
+[2024-06-30T08:52:02.231+0000] {Transform_data.py:7} INFO - start Extracting dim customers
+[2024-06-30T08:52:02.234+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.236+0000] {Transform_data.py:16} INFO - Extract dim customer done
+[2024-06-30T08:52:02.236+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.239+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.242+0000] {Load_data.py:30} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T08:52:02.255+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.256+0000] {Load_data.py:223} INFO - Loading factsales to db ...
+[2024-06-30T08:52:02.256+0000] {Transform_data.py:70} INFO - start Extracting fact sales
+[2024-06-30T08:52:02.259+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.263+0000] {Transform_data.py:81} INFO - Extract fact sales done
+[2024-06-30T08:52:02.263+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.266+0000] {Tables_creations.py:27} INFO - Loading data into table fact_sales...
+[2024-06-30T08:52:02.268+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:52:02.283+0000] {Tables_creations.py:41} INFO - Data loaded successfully into table fact_sales With 58 Row
+[2024-06-30T08:52:02.284+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:52:02.284+0000] {Load_data.py:231} INFO - Fact_Sales loaded successfully
+[2024-06-30T08:52:02.284+0000] {northwindDWH.py:54} INFO - Data delivery done
+[2024-06-30T08:52:02.285+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-30T08:52:02.285+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-30T08:52:02.294+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=data_delivery, run_id=manual__2024-06-30T08:49:32.176040+00:00, execution_date=20240630T084932, start_date=20240630T085201, end_date=20240630T085202
+[2024-06-30T08:52:02.349+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-30T08:52:02.368+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-30T08:52:02.370+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

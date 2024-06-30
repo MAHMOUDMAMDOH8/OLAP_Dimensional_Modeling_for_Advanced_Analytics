@@ -1,0 +1,48 @@
+[2024-06-30T08:46:54.172+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-30T08:46:54.196+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T08:46:50.139813+00:00 [queued]>
+[2024-06-30T08:46:54.202+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T08:46:50.139813+00:00 [queued]>
+[2024-06-30T08:46:54.203+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-30T08:46:54.216+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_delivery> on 2024-06-30 08:46:50.139813+00:00
+[2024-06-30T08:46:54.224+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=141) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-30T08:46:54.225+0000] {standard_task_runner.py:63} INFO - Started process 143 to run task
+[2024-06-30T08:46:54.226+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'data_delivery', 'manual__2024-06-30T08:46:50.139813+00:00', '--job-id', '90', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmpadwxob9d']
+[2024-06-30T08:46:54.228+0000] {standard_task_runner.py:91} INFO - Job 90: Subtask data_delivery
+[2024-06-30T08:46:54.238+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-30T08:46:54.267+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.data_delivery manual__2024-06-30T08:46:50.139813+00:00 [running]> on host 3abb3aef8f21
+[2024-06-30T08:46:54.353+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='data_delivery' AIRFLOW_CTX_EXECUTION_DATE='2024-06-30T08:46:50.139813+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-30T08:46:50.139813+00:00'
+[2024-06-30T08:46:54.354+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-30T08:46:54.368+0000] {northwindDWH.py:49} INFO - Data delivery started
+[2024-06-30T08:46:54.368+0000] {Load_data.py:85} INFO - loading dimEmployee to db ...
+[2024-06-30T08:46:54.368+0000] {Transform_data.py:51} INFO - start Extracting dim employee
+[2024-06-30T08:46:54.371+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:46:54.375+0000] {Transform_data.py:60} INFO - Extract dim employees done
+[2024-06-30T08:46:54.376+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:46:54.381+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:46:54.383+0000] {Load_data.py:103} INFO - SCD type 2 on dimemployee started
+[2024-06-30T08:46:54.389+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:46:54.389+0000] {Load_data.py:159} INFO - Loading dimproduct to db...
+[2024-06-30T08:46:54.390+0000] {Transform_data.py:27} INFO - Start Extracting dim product
+[2024-06-30T08:46:54.393+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:46:54.396+0000] {Transform_data.py:41} INFO - Extract dim products done
+[2024-06-30T08:46:54.397+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T08:46:54.400+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T08:46:54.403+0000] {Load_data.py:171} INFO - SCD type 1 on dimproduct started
+[2024-06-30T08:46:54.404+0000] {Load_data.py:210} ERROR - Error while loading dimProducts: 'Product_id'
+[2024-06-30T08:46:54.404+0000] {northwindDWH.py:56} ERROR - Error in data delivery: cannot access local variable 'E' where it is not associated with a value
+Traceback (most recent call last):
+  File "/opt/airflow/dags/northwindDWH.py", line 51, in data_delivery
+    load_DIM_Products(**db_credentials)
+  File "/opt/airflow/dags/scripts/Load_data.py", line 212, in load_DIM_Products
+    logging.error(f'Error while loading dimProducts: {str(E)}')
+                                                          ^
+UnboundLocalError: cannot access local variable 'E' where it is not associated with a value
+[2024-06-30T08:46:54.406+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-30T08:46:54.407+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-30T08:46:54.416+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=data_delivery, run_id=manual__2024-06-30T08:46:50.139813+00:00, execution_date=20240630T084650, start_date=20240630T084654, end_date=20240630T084654
+[2024-06-30T08:46:54.438+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-30T08:46:54.455+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-30T08:46:54.457+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,35 @@
+[2024-06-29T20:44:17.743+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-29T20:44:17.767+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.database_preparation manual__2024-06-29T20:44:16.467964+00:00 [queued]>
+[2024-06-29T20:44:17.776+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.database_preparation manual__2024-06-29T20:44:16.467964+00:00 [queued]>
+[2024-06-29T20:44:17.777+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-29T20:44:17.788+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): database_preparation> on 2024-06-29 20:44:16.467964+00:00
+[2024-06-29T20:44:17.797+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=71) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-29T20:44:17.799+0000] {standard_task_runner.py:63} INFO - Started process 73 to run task
+[2024-06-29T20:44:17.799+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'database_preparation', 'manual__2024-06-29T20:44:16.467964+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmp6tnesdxt']
+[2024-06-29T20:44:17.801+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask database_preparation
+[2024-06-29T20:44:17.813+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-29T20:44:17.841+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.database_preparation manual__2024-06-29T20:44:16.467964+00:00 [running]> on host 3abb3aef8f21
+[2024-06-29T20:44:17.922+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='database_preparation' AIRFLOW_CTX_EXECUTION_DATE='2024-06-29T20:44:16.467964+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-29T20:44:16.467964+00:00'
+[2024-06-29T20:44:17.924+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-29T20:44:17.935+0000] {northwindDWH.py:44} INFO - Database preparation started
+[2024-06-29T20:44:17.935+0000] {Tables_creations.py:7} INFO - Create tables ......
+[2024-06-29T20:44:17.939+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T20:44:17.946+0000] {db_utils.py:37} INFO - Query executed successfully for table DIM_Customers
+[2024-06-29T20:44:17.946+0000] {Tables_creations.py:19} INFO - Table DIM_Customers created successfully
+[2024-06-29T20:44:17.951+0000] {db_utils.py:37} INFO - Query executed successfully for table DIM_Employee
+[2024-06-29T20:44:17.951+0000] {Tables_creations.py:19} INFO - Table DIM_Employee created successfully
+[2024-06-29T20:44:17.957+0000] {db_utils.py:37} INFO - Query executed successfully for table DIM_Products
+[2024-06-29T20:44:17.958+0000] {Tables_creations.py:19} INFO - Table DIM_Products created successfully
+[2024-06-29T20:44:17.963+0000] {db_utils.py:37} INFO - Query executed successfully for table Fact_Sales
+[2024-06-29T20:44:17.964+0000] {Tables_creations.py:19} INFO - Table Fact_Sales created successfully
+[2024-06-29T20:44:17.964+0000] {northwindDWH.py:46} INFO - Database preparation done
+[2024-06-29T20:44:17.964+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-29T20:44:17.965+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-29T20:44:17.973+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=database_preparation, run_id=manual__2024-06-29T20:44:16.467964+00:00, execution_date=20240629T204416, start_date=20240629T204417, end_date=20240629T204417
+[2024-06-29T20:44:18.012+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-29T20:44:18.036+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-06-29T20:44:18.038+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

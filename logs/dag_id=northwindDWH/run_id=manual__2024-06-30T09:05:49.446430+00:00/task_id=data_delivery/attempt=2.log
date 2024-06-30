@@ -1,0 +1,95 @@
+[2024-06-30T09:13:19.631+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-30T09:13:19.664+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T09:05:49.446430+00:00 [queued]>
+[2024-06-30T09:13:19.676+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T09:05:49.446430+00:00 [queued]>
+[2024-06-30T09:13:19.676+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-06-30T09:13:19.689+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_delivery> on 2024-06-30 09:05:49.446430+00:00
+[2024-06-30T09:13:19.697+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=174) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-30T09:13:19.699+0000] {standard_task_runner.py:63} INFO - Started process 176 to run task
+[2024-06-30T09:13:19.699+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'data_delivery', 'manual__2024-06-30T09:05:49.446430+00:00', '--job-id', '101', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmps8h9bbkk']
+[2024-06-30T09:13:19.701+0000] {standard_task_runner.py:91} INFO - Job 101: Subtask data_delivery
+[2024-06-30T09:13:19.713+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-30T09:13:19.742+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.data_delivery manual__2024-06-30T09:05:49.446430+00:00 [running]> on host 3abb3aef8f21
+[2024-06-30T09:13:19.826+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='data_delivery' AIRFLOW_CTX_EXECUTION_DATE='2024-06-30T09:05:49.446430+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-30T09:05:49.446430+00:00'
+[2024-06-30T09:13:19.827+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-30T09:13:19.839+0000] {northwindDWH.py:49} INFO - Data delivery started
+[2024-06-30T09:13:19.839+0000] {Load_data.py:85} INFO - loading dimEmployee to db ...
+[2024-06-30T09:13:19.840+0000] {Transform_data.py:51} INFO - start Extracting dim employee
+[2024-06-30T09:13:19.843+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.846+0000] {Transform_data.py:60} INFO - Extract dim employees done
+[2024-06-30T09:13:19.846+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.850+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.853+0000] {Load_data.py:103} INFO - SCD type 2 on dimemployee started
+[2024-06-30T09:13:19.859+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.860+0000] {Load_data.py:159} INFO - Loading dimproduct to db...
+[2024-06-30T09:13:19.860+0000] {Transform_data.py:27} INFO - Start Extracting dim product
+[2024-06-30T09:13:19.864+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.866+0000] {Transform_data.py:41} INFO - Extract dim products done
+[2024-06-30T09:13:19.866+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.870+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.872+0000] {Load_data.py:172} INFO - SCD type 1 on dimproduct started
+[2024-06-30T09:13:19.886+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: integer out of range
+
+[2024-06-30T09:13:19.887+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.889+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.890+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.891+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.892+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.893+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.894+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.895+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.896+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.897+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.898+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.899+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.900+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.900+0000] {db_utils.py:40} INFO - Error while executing query for table dim_products: current transaction is aborted, commands ignored until end of transaction block
+
+[2024-06-30T09:13:19.901+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.901+0000] {Load_data.py:232} INFO - Loading dim_products completed successfully
+[2024-06-30T09:13:19.901+0000] {Load_data.py:12} INFO - loading dimCustomers to db ...
+[2024-06-30T09:13:19.902+0000] {Transform_data.py:7} INFO - start Extracting dim customers
+[2024-06-30T09:13:19.904+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.906+0000] {Transform_data.py:16} INFO - Extract dim customer done
+[2024-06-30T09:13:19.907+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.910+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.912+0000] {Load_data.py:30} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T09:13:19.929+0000] {db_utils.py:37} INFO - Query executed successfully for table dim_customers
+[2024-06-30T09:13:19.937+0000] {Tables_creations.py:27} INFO - Loading data into table dim_customers...
+[2024-06-30T09:13:19.945+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.949+0000] {Tables_creations.py:41} INFO - Data loaded successfully into table dim_customers With 1 Row
+[2024-06-30T09:13:19.950+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.951+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.952+0000] {Load_data.py:238} INFO - Loading factsales to db ...
+[2024-06-30T09:13:19.953+0000] {Transform_data.py:70} INFO - start Extracting fact sales
+[2024-06-30T09:13:19.960+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:19.968+0000] {Transform_data.py:81} INFO - Extract fact sales done
+[2024-06-30T09:13:19.969+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:19.980+0000] {Tables_creations.py:27} INFO - Loading data into table fact_sales...
+[2024-06-30T09:13:19.987+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T09:13:20.010+0000] {Tables_creations.py:41} INFO - Data loaded successfully into table fact_sales With 58 Row
+[2024-06-30T09:13:20.011+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T09:13:20.012+0000] {Load_data.py:246} INFO - Fact_Sales loaded successfully
+[2024-06-30T09:13:20.012+0000] {northwindDWH.py:54} INFO - Data delivery done
+[2024-06-30T09:13:20.013+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-30T09:13:20.014+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-30T09:13:20.024+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=data_delivery, run_id=manual__2024-06-30T09:05:49.446430+00:00, execution_date=20240630T090549, start_date=20240630T091319, end_date=20240630T091320
+[2024-06-30T09:13:20.075+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-30T09:13:20.096+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-30T09:13:20.097+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

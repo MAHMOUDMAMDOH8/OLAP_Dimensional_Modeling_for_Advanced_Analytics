@@ -1,0 +1,103 @@
+[2024-06-30T07:57:25.435+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-30T07:57:25.459+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T07:57:22.408494+00:00 [queued]>
+[2024-06-30T07:57:25.467+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-30T07:57:22.408494+00:00 [queued]>
+[2024-06-30T07:57:25.467+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-30T07:57:25.479+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_delivery> on 2024-06-30 07:57:22.408494+00:00
+[2024-06-30T07:57:25.487+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=63) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-30T07:57:25.488+0000] {standard_task_runner.py:63} INFO - Started process 65 to run task
+[2024-06-30T07:57:25.488+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'data_delivery', 'manual__2024-06-30T07:57:22.408494+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmpql15zwpn']
+[2024-06-30T07:57:25.490+0000] {standard_task_runner.py:91} INFO - Job 64: Subtask data_delivery
+[2024-06-30T07:57:25.500+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-30T07:57:25.528+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.data_delivery manual__2024-06-30T07:57:22.408494+00:00 [running]> on host 3abb3aef8f21
+[2024-06-30T07:57:25.612+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='data_delivery' AIRFLOW_CTX_EXECUTION_DATE='2024-06-30T07:57:22.408494+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-30T07:57:22.408494+00:00'
+[2024-06-30T07:57:25.613+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-30T07:57:25.625+0000] {northwindDWH.py:49} INFO - Data delivery started
+[2024-06-30T07:57:25.626+0000] {Load_data.py:84} INFO - loading dimEmployee to db ...
+[2024-06-30T07:57:25.626+0000] {Transform_data.py:48} INFO - start Extracting dim employee
+[2024-06-30T07:57:25.629+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.632+0000] {Transform_data.py:57} INFO - Extract dim employees done
+[2024-06-30T07:57:25.632+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.636+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.641+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.644+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.646+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.648+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.651+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.653+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.655+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.657+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.659+0000] {Load_data.py:104} INFO - SCD type 2 on dimemployee started
+[2024-06-30T07:57:25.663+0000] {Tables_creations.py:27} INFO - Loading data into table dim_employee...
+[2024-06-30T07:57:25.667+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.672+0000] {Tables_creations.py:41} INFO - Data loaded successfully into table dim_employee With 9 Row
+[2024-06-30T07:57:25.672+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.673+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.673+0000] {Load_data.py:156} INFO - loading dimproduct to db ...
+[2024-06-30T07:57:25.673+0000] {Transform_data.py:25} INFO - start Extracting dim product
+[2024-06-30T07:57:25.676+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.678+0000] {Transform_data.py:39} INFO - Extract dim products done
+[2024-06-30T07:57:25.679+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.682+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.685+0000] {Load_data.py:201} INFO - Error while loading dimProducts: 'product_id'
+[2024-06-30T07:57:25.686+0000] {Load_data.py:12} INFO - loading dimCustomers to db ...
+[2024-06-30T07:57:25.686+0000] {Transform_data.py:7} INFO - start Extracting dim customers
+[2024-06-30T07:57:25.689+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.691+0000] {Transform_data.py:16} INFO - Extract dim customer done
+[2024-06-30T07:57:25.691+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.694+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.697+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.699+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.701+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.703+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.705+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.707+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.709+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.711+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.713+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.715+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.718+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.720+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.722+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.724+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.725+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.727+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.730+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.732+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.734+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.736+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.738+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.740+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.742+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.744+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.746+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.748+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.750+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.752+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.754+0000] {Load_data.py:32} INFO - SCD type 2 on dimcustomer started
+[2024-06-30T07:57:25.759+0000] {Tables_creations.py:27} INFO - Loading data into table dim_customers...
+[2024-06-30T07:57:25.762+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.773+0000] {Tables_creations.py:41} INFO - Data loaded successfully into table dim_customers With 29 Row
+[2024-06-30T07:57:25.773+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.774+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.774+0000] {Load_data.py:205} INFO - loading factsales to db ...
+[2024-06-30T07:57:25.774+0000] {Transform_data.py:67} INFO - start Extracting fact sales
+[2024-06-30T07:57:25.777+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.780+0000] {Transform_data.py:80} INFO - Extract fact sales done
+[2024-06-30T07:57:25.781+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-30T07:57:25.781+0000] {Tables_creations.py:27} INFO - Loading data into table fact_sales...
+[2024-06-30T07:57:25.784+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-30T07:57:25.790+0000] {Load_data.py:212} INFO - Error while loading Fact_Sales: invalid input syntax for type timestamp: "NaT"
+LINE 1: ... (41, 43, 1, 7, '2006-03-24T00:00:00'::timestamp, 'NaT'::tim...
+                                                             ^
+
+[2024-06-30T07:57:25.790+0000] {northwindDWH.py:54} INFO - Data delivery done
+[2024-06-30T07:57:25.790+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-30T07:57:25.791+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-30T07:57:25.799+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=data_delivery, run_id=manual__2024-06-30T07:57:22.408494+00:00, execution_date=20240630T075722, start_date=20240630T075725, end_date=20240630T075725
+[2024-06-30T07:57:25.821+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-30T07:57:25.837+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-30T07:57:25.838+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

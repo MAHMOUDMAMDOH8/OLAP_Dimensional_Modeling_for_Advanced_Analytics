@@ -1,0 +1,29 @@
+[2024-06-29T21:04:14.024+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-29T21:04:14.047+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-29T21:04:09.735247+00:00 [queued]>
+[2024-06-29T21:04:14.055+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-29T21:04:09.735247+00:00 [queued]>
+[2024-06-29T21:04:14.055+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-29T21:04:14.067+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_delivery> on 2024-06-29 21:04:09.735247+00:00
+[2024-06-29T21:04:14.077+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=86) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-29T21:04:14.078+0000] {standard_task_runner.py:63} INFO - Started process 88 to run task
+[2024-06-29T21:04:14.078+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'data_delivery', 'manual__2024-06-29T21:04:09.735247+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmpu8b37p9g']
+[2024-06-29T21:04:14.080+0000] {standard_task_runner.py:91} INFO - Job 14: Subtask data_delivery
+[2024-06-29T21:04:14.092+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-29T21:04:14.122+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.data_delivery manual__2024-06-29T21:04:09.735247+00:00 [running]> on host 3abb3aef8f21
+[2024-06-29T21:04:14.209+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='data_delivery' AIRFLOW_CTX_EXECUTION_DATE='2024-06-29T21:04:09.735247+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-29T21:04:09.735247+00:00'
+[2024-06-29T21:04:14.210+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-29T21:04:14.223+0000] {northwindDWH.py:65} INFO - Data delivery started
+[2024-06-29T21:04:14.223+0000] {northwindDWH.py:72} ERROR - Error in data delivery: load_DIM_Employee() got an unexpected keyword argument 'db_name'
+Traceback (most recent call last):
+  File "/opt/airflow/dags/northwindDWH.py", line 66, in data_delivery
+    load_DIM_Employee(**db_credentials)
+TypeError: load_DIM_Employee() got an unexpected keyword argument 'db_name'
+[2024-06-29T21:04:14.224+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-29T21:04:14.225+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-29T21:04:14.233+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=data_delivery, run_id=manual__2024-06-29T21:04:09.735247+00:00, execution_date=20240629T210409, start_date=20240629T210414, end_date=20240629T210414
+[2024-06-29T21:04:14.252+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-29T21:04:14.266+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-29T21:04:14.267+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

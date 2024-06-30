@@ -1,0 +1,60 @@
+[2024-06-29T21:10:16.437+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-06-29T21:10:16.458+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-29T21:10:12.954599+00:00 [queued]>
+[2024-06-29T21:10:16.466+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: northwindDWH.data_delivery manual__2024-06-29T21:10:12.954599+00:00 [queued]>
+[2024-06-29T21:10:16.466+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-06-29T21:10:16.478+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): data_delivery> on 2024-06-29 21:10:12.954599+00:00
+[2024-06-29T21:10:16.486+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=110) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-06-29T21:10:16.488+0000] {standard_task_runner.py:63} INFO - Started process 112 to run task
+[2024-06-29T21:10:16.488+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'northwindDWH', 'data_delivery', 'manual__2024-06-29T21:10:12.954599+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/northwindDWH.py', '--cfg-path', '/tmp/tmpn05i__46']
+[2024-06-29T21:10:16.491+0000] {standard_task_runner.py:91} INFO - Job 22: Subtask data_delivery
+[2024-06-29T21:10:16.502+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-06-29T21:10:16.533+0000] {task_command.py:426} INFO - Running <TaskInstance: northwindDWH.data_delivery manual__2024-06-29T21:10:12.954599+00:00 [running]> on host 3abb3aef8f21
+[2024-06-29T21:10:16.628+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Mahmoud' AIRFLOW_CTX_DAG_ID='northwindDWH' AIRFLOW_CTX_TASK_ID='data_delivery' AIRFLOW_CTX_EXECUTION_DATE='2024-06-29T21:10:12.954599+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-06-29T21:10:12.954599+00:00'
+[2024-06-29T21:10:16.629+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-06-29T21:10:16.641+0000] {northwindDWH.py:49} INFO - Data delivery started
+[2024-06-29T21:10:16.642+0000] {Load_data.py:84} INFO - loading dimEmployee to db ...
+[2024-06-29T21:10:16.642+0000] {Transform_data.py:48} INFO - start Extracting dim employee
+[2024-06-29T21:10:16.645+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.648+0000] {Transform_data.py:57} INFO - Extract dim employees done
+[2024-06-29T21:10:16.649+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-29T21:10:16.653+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.654+0000] {Load_data.py:152} INFO - Error while loading dimCustomers: cursor "select * from DIM_Employee" does not exist
+
+[2024-06-29T21:10:16.654+0000] {Load_data.py:156} INFO - loading dimproduct to db ...
+[2024-06-29T21:10:16.654+0000] {Transform_data.py:25} INFO - start Extracting dim product
+[2024-06-29T21:10:16.658+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.660+0000] {Transform_data.py:39} INFO - Extract dim products done
+[2024-06-29T21:10:16.661+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-29T21:10:16.664+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.665+0000] {Load_data.py:199} INFO - Error while loading dimCustomers: cursor "select * from DIM_Products" does not exist
+
+[2024-06-29T21:10:16.666+0000] {Load_data.py:12} INFO - loading dimCustomers to db ...
+[2024-06-29T21:10:16.666+0000] {Transform_data.py:7} INFO - start Extracting dim customers
+[2024-06-29T21:10:16.669+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.672+0000] {Transform_data.py:16} INFO - Extract dim customer done
+[2024-06-29T21:10:16.672+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-29T21:10:16.676+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.676+0000] {Load_data.py:80} INFO - Error while loading dimCustomers: cursor "select * from DIM_Customers" does not exist
+
+[2024-06-29T21:10:16.677+0000] {Load_data.py:203} INFO - loading factsales to db ...
+[2024-06-29T21:10:16.677+0000] {Transform_data.py:67} INFO - start Extracting fact sales
+[2024-06-29T21:10:16.680+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.684+0000] {Transform_data.py:80} INFO - Extract fact sales done
+[2024-06-29T21:10:16.685+0000] {db_utils.py:30} INFO - PostgreSQL connection is closed
+[2024-06-29T21:10:16.685+0000] {Tables_creations.py:27} INFO - Loading data into table Fact_Sales...
+[2024-06-29T21:10:16.688+0000] {db_utils.py:21} INFO - Connected to PostgreSQL database successfully
+[2024-06-29T21:10:16.694+0000] {Load_data.py:211} INFO - Error while loading Fact_Sales: invalid input syntax for type timestamp: "NaT"
+LINE 1: ... (41, 43, 1, 7, '2006-03-24T00:00:00'::timestamp, 'NaT'::tim...
+                                                             ^
+
+[2024-06-29T21:10:16.694+0000] {northwindDWH.py:54} INFO - Data delivery done
+[2024-06-29T21:10:16.694+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-06-29T21:10:16.695+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-06-29T21:10:16.704+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=northwindDWH, task_id=data_delivery, run_id=manual__2024-06-29T21:10:12.954599+00:00, execution_date=20240629T211012, start_date=20240629T211016, end_date=20240629T211016
+[2024-06-29T21:10:16.742+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-06-29T21:10:16.757+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-06-29T21:10:16.759+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
