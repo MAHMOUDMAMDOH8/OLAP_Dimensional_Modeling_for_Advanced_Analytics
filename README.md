@@ -39,14 +39,14 @@ We have  one Data Sources:
   - northind  Data: Stored in postgres . 
 transform_data.py:
  -  Data is initially stored in a database.
- -       Get_Customerdim()
- -     - select column that i need form table customers that in the database
- -       Get_productdim()
- -     - select column that i need form table product that in the database
- -       Get_Employeedim()
- -     - select column that i need form table Employee that in the database
- -       Get_factSales()
- -     - select column that i need form table orders and order_ditail that in the database
+ - Get_Customerdim()
+ - - select column that i need form table customers that in the database
+ - Get_productdim()
+ - - select column that i need form table product that in the database
+ - Get_Employeedim()
+ - - select column that i need form table Employee that in the database
+ - Get_factSales()
+ -  - select column that i need form table orders and order_ditail that in the database
 ### Step 2: Data Delivery
  - tables_creation.py:
     - Contains functions to create, and load tables, reading the statements from sql_queries.py for preparing the data warehouse.
@@ -83,11 +83,11 @@ transform_data.py:
 
 # Tech Stack & Tools
 
-    Infrastructure: Docker
-    Data Warehouse: PostgreSQL
-    Database: PostgreSQL
-    Orchestration: Apache Airflow
-    ETL Scripts: Jupyter & Python
+Infrastructure: Docker
+Data Warehouse: PostgreSQL
+Database: PostgreSQL
+Orchestration: Apache Airflow
+ETL Scripts: Jupyter & Python
 
 
 
