@@ -6,15 +6,15 @@
 - [Tech Stack & Tools](#TechStack&Tools)
 
 # Aim
-To modernise data reporting solution for Northwind through Dimensional Modeling.
 
-# Identifying Business Requirements
+To modernize the data reporting solution for Northwind through Dimensional Modeling.
+Identifying Business Requirements
 
-There are many business Processes that can be derived from the Northwind database through the E-R diagram. However, we will be focusing on one processes:
+There are many business processes that can be derived from the Northwind database through the E-R diagram. However, we will be focusing on one process:
 
-    Sales Overview: Overall sales reports to understand better, what is being sold to our customers, what sells the most, where and what sells the least, the goal is to have a general overview of how the business is going.
+    Sales Overview: Overall sales reports to better understand what is being sold to our customers, what sells the most, where, and what sells the least. The goal is to have a general overview of how the business is performing.
     
-hear is the ERD for northint OLTP 
+Here is the ERD for Northwind OLTP:
 
 ![northwind-oltp-erd](https://github.com/MAHMOUDMAMDOH8/OLAP_Dimensional_Modeling_for_Advanced_Analytics/assets/111503676/3e6d12ef-fa3a-4f03-82fb-c867b65bc343)
 
@@ -40,13 +40,13 @@ We have  one Data Sources:
 transform_data.py:
  -  Data is initially stored in a database.
  - Get_Customerdim()
- - - select column that i need form table customers that in the database
+ - - Selects columns needed from the Customers table.
  - Get_productdim()
- - - select column that i need form table product that in the database
+ - - Selects columns needed from the Products table.
  - Get_Employeedim()
- - - select column that i need form table Employee that in the database
+ - - Selects columns needed from the Employees table.
  - Get_factSales()
- -  - select column that i need form table orders and order_ditail that in the database
+ -  - Selects columns needed from the Orders and Order Details tables.
 ### Step 2: Data Delivery
  - tables_creation.py:
     - Contains functions to create, and load tables, reading the statements from sql_queries.py for preparing the data warehouse.
@@ -69,13 +69,21 @@ transform_data.py:
 
 # Database Schema
 
-1 Dim_customers Contains information about customers   : customer_id ,company ,last_name ,first_name ,email_address ,job_title ,business_phone ,home_phone ,mobile_phone ,fax_number ,address ,city ,state_province ,zip_postal_code ,country_region ,web_page ,notes ,attachments ,start_date ,end_date ,active_flag ,version ,
+dim_customers: Contains information about customers.
 
-2 DIM_Employee  Contains information about employee : Employee _id ,company ,last_name ,first_name ,email_address ,job_title ,business_phone ,home_phone ,mobile_phone ,fax_number ,address ,city ,state_province ,zip_postal_code ,country_region ,web_page ,notes ,attachments ,start_date ,end_date ,active_flag ,version ,
+    Columns: customer_id, company, last_name, first_name, email_address, job_title, business_phone, home_phone, mobile_phone, fax_number, address, city, state_province, zip_postal_code, country_region, web_page, notes, attachments, start_date, end_date, active_flag, version.
 
-3 dim_product Contains information about products : Product_id   , product_code ,product_name ,description ,standard_cost ,list_price ,reorder_level ,target_level , quantity_per_unit , discontinued ,  minimum_reorder_quantity , category ,         attachments 
+dim_employee: Contains information about employees.
 
-4 fact_sales : order_id ,  Product_id , Employee_id ,customer_id ,order_date ,payment_type , Quantity ,unit_price , discount , status_id 
+    Columns: employee_id, company, last_name, first_name, email_address, job_title, business_phone, home_phone, mobile_phone, fax_number, address, city, state_province, zip_postal_code, country_region, web_page, notes, attachments, start_date, end_date, active_flag, version.
+    
+dim_product: Contains information about products.
+
+    Columns: product_id, product_code, product_name, description, standard_cost, list_price, reorder_level, target_level, quantity_per_unit, discontinued, minimum_reorder_quantity, category, attachments.
+
+fact_sales: Contains sales data.
+
+    Columns: order_id, product_id, employee_id, customer_id, order_date, payment_type, quantity, unit_price, discount, status_id.
 
 
 ![Flowcharts](https://github.com/MAHMOUDMAMDOH8/OLAP_Dimensional_Modeling_for_Advanced_Analytics/assets/111503676/04b45fb2-fd07-4ec2-94cb-43506e1944a1)
@@ -91,7 +99,7 @@ Database: PostgreSQL
 
 Orchestration: Apache Airflow
 
-ETL Scripts: Jupyter & Python
+ETL Scripts:   Python
 
 
 
